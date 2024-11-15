@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char choice;
+
+    do { // this begins the do/while loop. 
+        int sum = 0, number;
+
+        // asks to user to input a number.
+        while (true) {
+            cout << "Enter a number: ";
+            cin >> number;
+            
+            if (number == 0) {
+                break; // here it exists loop at 0.
+            }
+            
+            sum += number;
+        }
+
+        // program displays the number.
+        cout << "The summation of numbers is: " << sum << endl;
+
+        // program asks the user if they want to input another sum.
+        cout << "Calculate another sum? [Y/N]: ";
+        cin >> choice;
+
+        // continutes to prompt if the input is not y or n.
+        while (choice != 'Y' && choice != 'y' && choice != 'N' && choice != 'n') {
+            cout << "Calculate another sum? [Y/N]: "; // if user chooses N it will exit.
+            cin >> choice;
+        }
+
+    } while (choice == 'Y' || choice == 'y'); // char declares these.
+
+    return 0;
+}
+
